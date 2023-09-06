@@ -1,0 +1,14 @@
+repos:
+-   repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+    -   id: detect-secrets
+        args: ['scan']
+        exclude: package.lock.json
+-   repo: https://github.com/thoughtworks/talisman
+    rev: 'v1.31.0'  # Update me!
+    hooks:
+    # either `commit` or `push` support
+    # -   id: talisman-push
+    - id: talisman-commit
+      entry: cmd --githook pre-commit
