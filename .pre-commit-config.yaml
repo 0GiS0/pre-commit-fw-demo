@@ -6,9 +6,14 @@ repos:
         args: ['scan']
         exclude: package.lock.json
 -   repo: https://github.com/thoughtworks/talisman
-    rev: 'v1.31.0'  # Update me!
+    rev: 'v1.31.0' 
     hooks:
     # either `commit` or `push` support
-    # -   id: talisman-push
+    -   id: talisman-commit
     - id: talisman-commit
       entry: cmd --githook pre-commit
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0  # Use the ref you want to point at
+    hooks:
+    -   id: trailing-whitespace
+    # -   id: ...
